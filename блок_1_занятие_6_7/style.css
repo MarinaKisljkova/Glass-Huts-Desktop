@@ -1,0 +1,370 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+/* Стилизуем хэдер и все что в нем */
+header {
+    width: 90%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto; /* auto - это для центровки*/
+}
+
+.logo {
+    width: 5%;
+    height: 80%;
+    background: url(./img/logo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.menu_list {
+    display: flex;
+    width: 40%;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.language {
+    background: url(./img/denmark.png);/*картинки желательно переименовывать, чтобы понимать, что это за картинка */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 25px; /* если ширину не указать, то изображение не отобразится */
+    height: 25px;
+
+}
+
+.header_booking {
+    text-decoration: none;
+    color: rgb(252, 252, 252);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13%;
+    height: 70%;
+    background-color: #586460;
+
+}
+
+/* конец стилизации хэдера */
+
+
+
+/* стилизуем основную часть сайта main */
+/* стилизуем первый блок main_first */
+.main {
+    width: 100%;
+    height: auto;
+}
+
+.main_first {
+    width: 100%;
+    height: 90vh; /* вьюпорт хэйт - проценты от высоты окна браузера; кроме vh есть еще vw - это процент от ширины окна браузера */
+    background: url(./img/main_first.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFFFFF;
+}
+
+.first_inner { 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2); /* сделали затемнение картинки */
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    position: relative; /* это прописали, чтобы сработал position: absolute; в стрелочках (.arrows ) и можно было их опустить вниз от центра. Этим свойством мы укзали, что .arrows будет двигаться относительно родителя .first_inner */
+}
+
+.first_inner > h1 {
+    font-size: 70px;
+    margin-right: 2em; /* отступ рассчитали так, чтобы конец h1 и конец р были на одном уровне: 70px * 2em = 140px, 20px * 7em = 140px */
+    margin-bottom: 0;
+}
+
+.first_inner > p {
+    font-size: 20px;
+    margin-right: 7em;
+    text-align: center;
+}
+
+.arrows {
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+    align-self: center;
+    position: absolute;
+    bottom: 5em;
+    
+}
+
+.right_arrow {
+    transform: rotate(180deg);
+}
+/* конец стилизации main_first */
+
+/* стилизуем блок theCabins */
+
+.theCabins {
+    width: 100%;
+    height: 120vh; /* здесь большая высота, чтобы появились отступы сверху и снизу */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; /* чтобы добавились отступы сверху и снизу */
+}
+
+.cabins_upper {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabins_text {
+    width: 45%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 6em;
+}
+
+.cabins_text > h2 {
+    font-size: 40px;
+    color: #5B6460;
+    margin: 0;
+}
+
+.cabins_text > p {
+    font-size: 16px;
+    color: #000000;
+    width: 60%;
+    margin: 0;
+}
+
+.cabins_text > a {
+    color: #5B6460;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #5B6460; /* этой строкой и следующими 2-мя делаю бордер как на макете.можно еще паддингом двигать его дальше от текста ссылки */
+    display: block;
+    width: 77px;
+    
+}
+
+.cabins_upper > img {
+    height: 100%;
+    width: 50%;
+}
+
+.cabins_lower {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cabins_lower > img { /* Здесь, как и везде стараемся прописывать размеры, как это выглядит на макете */
+    width: 31%;
+    height: 100%;
+}
+
+/*закончилась стилизация theCabins */
+
+
+
+
+/* Начало стилизации main_forest */
+
+.main_forest {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.forest_map {
+    width: 50%;
+    height: 100%;
+    background-image: url(./img/forest_map.png);
+    background-position: 0%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.forest_inner {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* здесь начинается установка кругов на карте */
+
+.forest_round {
+    width: 11rem;
+    height: 11rem; /* для проверки - хватит ли высоты и ширины добавим свойство background-color: #FFFFFF; запишем правильные размеры и удалим background-color */
+    border-radius: 50% 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first {
+    background-color: rgba(255, 255, 255, .322);
+    position: relative;
+    right: 2.3em;
+    bottom: 1.3em;
+}
+
+.second {
+    width: 8rem;
+    height: 8rem;
+    background-color: rgba(255, 255, 255, .534);
+}
+
+.third {
+    width: 5rem; /* https://habr.com/ru/post/280125/ - прекрасная статья про использование rem и em */
+    height: 5rem;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 12px;
+}
+
+/* здесь закончилась установка кругов на карте */
+
+
+
+.forest_text {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #E9ECE0;
+    
+}
+.forest_text > h2 {
+    font-size: 40px;
+    color: #5B6460;
+    width: 60%; /* выравниваем заголовок, абзац и ссылку одинаковой шириной */
+}
+.forest_text > p {
+    font-size: 16px;
+    width: 60%;
+    
+}
+.forest_text > a {
+    font-size: 12px;
+    color: #5B6460;
+    width: 60%;
+}
+
+
+
+/* Конец стилизации main_forest */
+
+
+
+
+
+/* Начало стилизации main_facilities */
+
+.main_facilities {
+    background-color: #5B6460;
+    width: 100%;
+    height: 60vh;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.main_facilities > h2 {
+    font-weight: 100;
+    font-size: 40px;
+    color: #FFFFFF;
+    margin: 0%;
+    margin-bottom: 2em;
+}
+.facilities_inner {
+    width: 55%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.facilities_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* здесь это пишем, чтоб правильно отображались рисунки, ато они стали расплывчатыми*/
+
+}
+
+
+/* Конец стилизации main_facilities */
+
+
+
+
+
+/* Начало стилизации More_about_us */
+
+
+.main_more_about_us {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.outside_view {
+    width: 50%;
+    height: 100%;
+    background-image: url(./img/outside.png);
+
+}
+
+.more_about_us {
+    position: absolute;
+    width: 10%;
+    height: 20%;
+    background-color: #E9ECE0;
+    border-radius: 50% 50%;
+    right: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.text {
+    color:  #333333;
+}
+
+.inside_view {
+    width: 50%;
+    height: 100%;
+    background-image: url(./img/inside.png);
+
+}
+
+
+/* Конец стилизации More_about_us */
+
+/*закончилась стилизация основной части сайта main */
